@@ -33,5 +33,5 @@ events0 = first_entry['events']
 times = np.array(events0['trial'].index.values, dtype ='datetime64[ms]')
 x1 =times[0]
 x2 =times[1]
-axes.axvline(x1, color='k', linestyle='solid')
-axes.axvline(x2, color='k', linestyle='solid')
+axes.axvline(x1, color='k', linestyle='dashed')
+axes.axvline(x2, color='k', linestyle='dashed')
