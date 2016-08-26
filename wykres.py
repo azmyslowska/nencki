@@ -18,7 +18,7 @@ def read(signal):
     for single_path in paths:
         recording = loading.Read_edf.Combine_EDF_XML(single_path, 3, 70)
         recording_list.append(recording)
-        return recording_list
+    return recording_list
     
 read(paths)
 
