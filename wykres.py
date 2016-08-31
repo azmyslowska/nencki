@@ -31,7 +31,21 @@ axes.plot(first_entry['timestamp'], first_entry['EEG C3'])
 events0 = first_entry['events']
 
 times = np.array(events0['trial'].index.values, dtype ='datetime64[ms]')
-x1 =times[0]
-x2 =times[1]
+time_container_length = len(times)
+x1 = times[0]
+x2 = times[1]
+x3 = times[time_container_length - 1]
 axes.axvline(x1, color='k', linestyle='dashed')
 axes.axvline(x2, color='k', linestyle='dashed')
+
+
+#slice the signal by designated times
+firstC3 = first_entry['EEG C3'] 
+first_e_C3= np.array_split(firstC3, [])
+#first_e_C3[0 : x1]
+
+
+
+''' #slices the signal into 'eyes open' and 'eyes closed' epochs
+epochs_info = {'Eyes Open':[], 'Eyes Closed': [}
+pyseries.prep.Epochs.Make_Epochs_for_Channels(first_entry['EEG C3'], epochs_info )'''
